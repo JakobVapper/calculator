@@ -12,9 +12,13 @@ function calculate() {
 		return;
 	}
 
-	const remainingHours = 24 - totalHours;
+	const remainingHours = 24 - sleepHours - socialHours - exerciseHours - studyHours - otherHours;
 
 	let resultText = `You have ${remainingHours} hours left in the day.`;
+
+	if (remainingHours === 24) {
+        resultText += " Enter how many hours you spend on other activities to see your results.";
+    }
 
 	if (sleepHours >= 8) {
 		resultText += " You have a healthy amount of sleep!";
